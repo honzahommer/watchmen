@@ -15,5 +15,5 @@ module.exports = {
 
     ga_analytics_ID: process.env.WATCHMEN_GOOGLE_ANALYTICS_ID,
 
-    baseUrl: '/'
+    baseUrl: process.env.WATCHMEN_BASE_URL || '/'
 };

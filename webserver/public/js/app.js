@@ -38,7 +38,7 @@
             controller: 'ServiceEditCtrl'
         });
 
-        $urlRouterProvider.when('/', '/services');
+        $urlRouterProvider.when('/', 'services');
     });
 
 })();

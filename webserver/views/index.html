@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="watchmenApp">
   <head>
-    <title>watchmen, http monitor for node.js - <%= title %></title>
+    <title>watchmen - <%= title %></title>
     <link rel='stylesheet' href='<%=baseUrl%>build/style.css' />
     <meta name="viewport" content="width=device-width">
     <base href="<%=baseUrl%>">
@@ -38,8 +38,6 @@
     <% if (user) { %>
       <script>window.isAdmin=<%=user.isAdmin%>;</script>
     <% } %>
-    <a target="_blank" href="https://github.com/iloire/WatchMen">watchmen source code (github)</a> |
-    author: <a target="_blank" href="http://iloire.com">iloire.com</a> | bitcoin: 1DQRybRW7cQtRq65qCxkpGNLX9BVjmfJaY
   </footer>
 
   <script src="<%=baseUrl%>build/scripts.js"></script>
