@@ -21,7 +21,7 @@ module.exports = {
     }
   }],
   deploy: {
-    stage: {
+    test: {
       user: 'app',
       host: '192.168.200.42',
       ref: 'origin/master',
