@@ -9,7 +9,7 @@ module.exports = {
         GOOGLE_CLIENT_SECRET: process.env.WATCHMEN_GOOGLE_CLIENT_SECRET || '<Create credentials in Google Dev Console>'
     },
 
-    port: process.env.WATCHMEN_WEB_PORT || 3102, // default port
+    port: process.env.WATCHMEN_WEB_PORT || 3000, // default port
 
     admins: process.env.WATCHMEN_ADMINS,
 

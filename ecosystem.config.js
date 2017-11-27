@@ -8,37 +8,22 @@ module.exports = {
     name: 'watchmen-web-server',
     script: 'run-web-server.js',
     env: {
-      WATCHMEN_WEB_PORT: '3102'
-    },
-    env_test: {
-      NODE_ENV: 'test',
-      WATCHMEN_WEB_PORT: '3101'
+      NODE_ENV: 'development',
     },
     env_production: {
       NODE_ENV: 'production',
-      WATCHMEN_BASE_URL: 'https://app.opennet.cz/watchmen/',
-      WATCHMEN_WEB_PORT: '3100'
+      WATCHMEN_BASE_URL: 'https://app.opennet.cz/' + pkg.name  + '/',
+      WATCHMEN_WEB_PORT: 3100
     }
   }],
   deploy: {
-    test: {
-      user: 'app',
-      host: '192.168.200.42',
-      ref: 'origin/master',
-      repo: pkg.repository.url,
-      path: '/usr/local/app/' + pkg.name + '/test',
-      'post-deploy': 'npm install && bower install --allow-root && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env test',
-      env: {
-        NODE_ENV: 'test'
-      }
-    },
     production: {
       user: 'app',
       host: '192.168.200.42',
       ref: 'origin/master',
       repo: pkg.repository.url,
-      path: '/usr/local/app/' + pkg.name + '/production',
-      'post-deploy': 'npm install && bower install --allow-root && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production',
+      path: '/usr/local/app/' + pkg.name,
+      'post-deploy': 'npm install && bower --allow-root install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production',
       env: {
         NODE_ENV: 'production'
       }
