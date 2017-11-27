@@ -27,7 +27,7 @@ module.exports = {
       ref: 'origin/master',
       repo: pkg.repository.url,
       path: '/usr/local/app/' + pkg.name + '/test',
-      'post-deploy': 'npm install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env test',
+      'post-deploy': 'npm install && bower install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env test',
       env: {
         NODE_ENV: 'test'
       }
@@ -38,7 +38,7 @@ module.exports = {
       ref: 'origin/master',
       repo: pkg.repository.url,
       path: '/usr/local/app/' + pkg.name + '/production',
-      'post-deploy': 'npm install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production',
+      'post-deploy': 'npm install && bower install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production',
       env: {
         NODE_ENV: 'production'
       }
