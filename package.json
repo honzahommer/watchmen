@@ -13,6 +13,7 @@
     "test": "mocha -R list test/*.js"
   },
   "description": "A simple service monitor",
+  "repository": {
     "type": "git",
     "url": "git://github.com/honzahommer/watchmen.git"
   },
