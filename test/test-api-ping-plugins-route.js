@@ -43,10 +43,10 @@ describe('ping plugins route', function () {
             .expect(200)
             .send()
             .end(function (err, res) {
-              assert.equal(res.body.length, 2);
+              assert.equal(res.body.length, 5);
               var plugins = res.body.sort(function(a, b){ return a.name > b.name; });
-              assert.equal(plugins[0].name, 'http-contains');
-              assert.equal(plugins[1].name, 'http-head');
+              assert.equal(plugins[0].name, 'dns-resolve');
+              assert.equal(plugins[1].name, 'http-contains');
               done(err);
             });
       });

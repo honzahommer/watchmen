@@ -1,6 +1,6 @@
 module.exports = {
 
-    no_auth: process.env.WATCHMEN_WEB_NO_AUTH === 'true',
+    no_auth: process.env.WATCHMEN_WEB_AUTH !== 'true',
 
     public_host_name: process.env.WATCHMEN_BASE_URL, // required for OAuth dance
 
@@ -9,7 +9,7 @@ module.exports = {
         GOOGLE_CLIENT_SECRET: process.env.WATCHMEN_GOOGLE_CLIENT_SECRET || '<Create credentials in Google Dev Console>'
     },
 
-    port: process.env.WATCHMEN_WEB_PORT, // default port
+    port: process.env.WATCHMEN_WEB_PORT || 3102, // default port
 
     admins: process.env.WATCHMEN_ADMINS,
 
