@@ -13,7 +13,7 @@ module.exports = {
     env_test: {
       NODE_ENV: 'test',
       WATCHMEN_WEB_PORT: '3101'
-    }
+    },
     env_production: {
       NODE_ENV: 'production',
       WATCHMEN_BASE_URL: 'https://app.opennet.cz/watchmen/',
