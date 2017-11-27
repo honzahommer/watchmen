@@ -1,5 +1,4 @@
 {
-  "author": "Iván Loire <ivan@iloire.com> (http://iloire.com/)",
   "name": "watchmen",
   "scripts": {
     "start": "node run-web-server",
@@ -14,11 +13,8 @@
     "test": "mocha -R list test/*.js"
   },
   "description": "A simple service monitor",
-  "version": "3.3.1",
-  "homepage": "http://letsnode.com",
-  "repository": {
     "type": "git",
-    "url": "git://github.com/iloire/watchmen.git"
+    "url": "git://github.com/honzahommer/watchmen.git"
   },
   "engines": {
     "node": ">=0.10"
