@@ -31,7 +31,7 @@ module.exports = {
       env: {
         NODE_ENV: 'test'
       }
-    }
+    },
     production: {
       user: 'app',
       host: '192.168.200.42',
