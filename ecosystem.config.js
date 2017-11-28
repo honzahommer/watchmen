@@ -34,6 +34,7 @@ module.exports = {
       repo: pkg.repository.url,
       path: '/usr/local/app/' + pkg.name,
       env: env_production,
+      env_production: env_production,
       'post-deploy': 'npm update; bower update; gulp build; NODE_ENV=production pm2 startOrRestart ecosystem.js;'
     }
   }
