@@ -29,8 +29,6 @@ for (var key in env_production) {
   _env_production.push('export ' + key + '="' + env_production[key] + '" && ');
 }
 
-console.log(_env_production.join(''));
-
 module.exports = {
   apps : [{
     name: pkg.name + '-monitor-server',
