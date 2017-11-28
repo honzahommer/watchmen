@@ -10,6 +10,7 @@ module.exports = {
     script: 'run-web-server.js',
     env: {
       NODE_ENV: 'development',
+      WATCHMEN_BASE_URL: 'http://localhost/' + pkg.name  + '/',
       WATCHMEN_WEB_NO_AUTH: 'true',
       WATCHMENT_AUTH_NODEMAILER_NO_AUTH: 'true'
     },
