@@ -58,7 +58,6 @@
     "watchmen-ping-http-head": "^0.2.0",
     "watchmen-ping-icmp": "^0.1.2",
     "watchmen-ping-smtp": "^2.0.0",
-    "watchmen-plugin-aws-ses": "0.0.1",
     "watchmen-plugin-console": "0.2.0",
     "watchmen-plugin-nodemailer": "git+https://github.com/honzahommer/watchmen-plugin-nodemailer.git"
   },
