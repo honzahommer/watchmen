@@ -10,7 +10,8 @@
     "posttest": "kill `cat test/redis.pid`",
     "precoverage": "redis-server test/redis.test.conf",
     "pretest": "redis-server test/redis.test.conf",
-    "test": "mocha -R list test/*.js"
+    "test": "mocha -R list test/*.js",
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "description": "A simple service monitor",
   "repository": {
