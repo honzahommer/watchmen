@@ -44,8 +44,7 @@ module.exports = {
       host: '192.168.200.42',
       ref: 'origin/master',
       repo: pkg.repository.url,
-      path: '/usr/local/app/' + pkg.name,
-      'post-deploy': 'export NODE_ENV=development && export WATCHMEN_BASE_URL=http://localhost/watchmen/ && export WATCHMEN_WEB_NO_AUTH=true && export WATCHMENT_AUTH_NODEMAILER_NO_AUTH=true && export NODE_ENV=production && export WATCHMEN_BASE_URL=https://app.opennet.cz/watchmen/ && export WATCHMEN_WEB_PORT=3100 && export WATCHMEN_AUTH_NODEMAILER_USER=root@cap-net.cz && export WATCHMEN_AUTH_NODEMAILER_SENDMAIL=true && export WATCHMEN_MAILER_TEMPLATE_DIRECTORY=/home/honza/Work/opennet/watchmen/webserver/views/nodemailer && npm install && bower --allow-root install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production'
+      path: '/usr/local/app/' + pkg.name
     }
   }
 };
