@@ -17,7 +17,7 @@
       reportCache.removeAll();
     }, CACHE_EXPIRATION);
     
-    var Report = $resource('api/report/services/:id', {id: '@id'}, {
+    var Report = $resource('/api/report/services/:id', {id: '@id'}, {
       'get': { method:'GET', cache: reportCache},
       'query': { method:'GET', isArray:true, cache: reportCache}
     });
@@ -32,7 +32,7 @@
   });
 
   factories.factory('Service', function ($resource) {
-    return $resource('api/services/:id',
+    return $resource('/api/services/:id',
         {id: '@id'}, {
 
           /**
@@ -40,15 +40,25 @@
            */
           reset: {
             method: 'POST',
-            url: 'api/services/:id/reset'
+            url: '/api/services/:id/reset'
           }
 
         });
   });
 
+  factories.factory('Tags', function($http) {
+    return {
+      query: function(callback) {
+        return $http.get('/api/tags').then(function(data) {
+          callback(data.data);
+        });
+      }
+    }
+  });
+
   factories.factory('PingPlugins', function ($resource, $cacheFactory) {
     pingPluginsCache = $cacheFactory('PingPlugins');
-    return $resource('api/plugins/:id',
+    return $resource('/api/plugins/:id',
         {id: '@id'}, {
           'query': { method:'GET', isArray:true, cache: pingPluginsCache}
         });

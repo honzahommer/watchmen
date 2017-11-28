@@ -49,7 +49,7 @@ describe('reporting', function () {
 
     reporter = new reportService(storage);
 
-    servicesFixtures = dummyServiceGenerator.generate(1);
+    var servicesFixtures = dummyServiceGenerator.generate(1);
 
     storage.flush_database(function () {
 
@@ -190,7 +190,7 @@ describe('reporting', function () {
           {timestamp: INITIAL_TIME + 1.1 * DAY, latency: 200},
           {timestamp: INITIAL_TIME + 2.1 * DAY, latency: 400},
           {timestamp: INITIAL_TIME + 3.1 * DAY, latency: 900},
-          {timestamp: INITIAL_TIME + 3.5 * DAY, latency: 1100}
+          {timestamp: INITIAL_TIME + 3.5 * DAY, latency: 1000}
         ];
 
         saveLatencyRecords(services[0], data, function () {
@@ -198,7 +198,7 @@ describe('reporting', function () {
           reporter.getService(services[0].id, function (err, data) {
             assert.ifError(err);
             assert.equal(data.status.lastWeek.latency.list.length, 4);
-            assert.equal(data.status.lastWeek.latency.list[0].l, 1000);
+            assert.equal(data.status.lastWeek.latency.list[0].l, 950);
             assert.equal(data.status.lastWeek.latency.list[1].l, 400);
             assert.equal(data.status.lastWeek.latency.list[2].l, 200);
             assert.equal(data.status.lastWeek.latency.list[3].l, 100);
@@ -213,7 +213,7 @@ describe('reporting', function () {
           {timestamp: INITIAL_TIME + HOUR, latency: 200},
           {timestamp: INITIAL_TIME + 2 * HOUR, latency: 400},
           {timestamp: INITIAL_TIME + 3 * HOUR, latency: 900},
-          {timestamp: INITIAL_TIME + 3.5 * HOUR, latency: 1100}
+          {timestamp: INITIAL_TIME + 3.5 * HOUR, latency: 1000}
         ];
 
         saveLatencyRecords(services[0], data, function () {
@@ -221,7 +221,7 @@ describe('reporting', function () {
           reporter.getService(services[0].id, function (err, data) {
             assert.ifError(err);
             assert.equal(data.status.last24Hours.latency.list.length, 4);
-            assert.equal(data.status.last24Hours.latency.list[0].l, 1000);
+            assert.equal(data.status.last24Hours.latency.list[0].l, 950);
             assert.equal(data.status.last24Hours.latency.list[1].l, 400);
             assert.equal(data.status.last24Hours.latency.list[2].l, 200);
             done();
