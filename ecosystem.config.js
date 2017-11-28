@@ -22,12 +22,14 @@ const env_production = {
 
 for (var key in env) {
   _env.push('export ' + key + '=' + env[key] + ' && ');
-  _env_production.push('export ' + key + '=' + env[key] + ' && ');
+  _env_production.push('export ' + key + '="' + env[key] + '" && ');
 }
 
 for (var key in env_production) {
-  _env_production.push('export ' + key + '=' + env_production[key] + ' && ');
+  _env_production.push('export ' + key + '="' + env_production[key] + '" && ');
 }
+
+console.log(_env_production.join(''));
 
 module.exports = {
   apps : [{
@@ -46,7 +48,7 @@ module.exports = {
       ref: 'origin/master',
       repo: pkg.repository.url,
       path: '/usr/local/app/' + pkg.name,
-      'post-deploy': + _env_production.join('') + 'npm install && bower --allow-root install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production'
+      'post-deploy': + _env_production.join('') + ' npm install && bower --allow-root install && gulp build && pm2 startOrGracefulReload ecosystem.config.js --env production'
     }
   }
 };
