@@ -13,9 +13,11 @@ exports = module.exports = (function(){
 
   function getRandomTags() {
     var tags = [];
-    var size = faker.random.number(3);
-    for (var i = 0; i < size; i++) {
-      tags.push(faker.random.array_element(['prod', 'dev', 'remote', 'office2']))
+    for (var i = 0; i < faker.random.number(2); i++) {
+      tags.push(faker.random.array_element(['prod', 'dev']))
+    }
+    for (var i = 0; i < faker.random.number(2); i++) {
+      tags.push(faker.random.array_element(['remote', 'office2']))
     }
     return tags;
   }
@@ -29,8 +31,10 @@ exports = module.exports = (function(){
       port: 443,
       timeout: 10000,
       warningThreshold: 3000,
+      failuresToBeOutage: 2,
       pingServiceName: 'http-head',
-      tags: getRandomTags()
+      tags: getRandomTags(),
+      alertTo: 'honza@cnt.cz'
     };
   }
 

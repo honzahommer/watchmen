@@ -71,7 +71,18 @@
                 <td class="status" data-title="'Status'" sortable="'status.currentOutage'">
                     <span ng-if="(!row.service.isPaused && row.status.currentOutage)" class="label label-danger">offline</span>
                     <span ng-if="(!row.service.isPaused && !row.status.currentOutage)" class="label label-success">online</span>
-                    <span ng-if="row.service.isPaused" class="label label-info">Paused</span>
+                    <span ng-if="row.service.isPaused" class="label label-default">paused</span>
+                </td>
+
+                <td data-title="'Host'" sortable="'service.name'">
+                    <span ng-if="row.service.isRestricted" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                    <a class="name" href="/services/{{row.service.id}}/view">
+                        {{row.service.name}}
+                    </a>
+                </td>
+ 
+                <td class="service" data-title="'Service'" sortable="'service.pingServiceName'">
+                    {{row.service.pingServiceName}}
                 </td>
 
                 <td class="result-uptime"  data-title="'last 24h'" sortable="'status.last24Hours.uptime'">
@@ -85,25 +96,6 @@
                     <a class="name" href="/services/{{row.service.id}}/view">
                         <span>{{row.status.lastWeek.uptime}}%</span>
                     </a>
-                </td>
-
-                <td header-class="'hidden-sm hidden-xs'" class="service hidden-sm hidden-xs"
-                    data-title="'Service'" sortable="'name'">
-                    {{row.service.pingServiceName}}
-                </td>
-
-                <td data-title="'Host'" sortable="'service.name'">
-                    <span ng-if="row.service.isRestricted" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-                    <a class="name" href="/services/{{row.service.id}}/view">
-                        {{row.service.name}}
-                    </a>
-                </td>
-
-                <td header-class="'hidden-xs'" class="outages hidden-xs"
-                    data-title="'Downtime last 24h'" sortable="'status.last24Hours.downtime'">
-                    <span ng-if="row.status.last24Hours.downtime" class="label label-danger">
-                        <span ms-time="row.status.last24Hours.downtime"></span>
-                    </span>
                 </td>
             </tr>
             </tbody>
