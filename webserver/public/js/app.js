@@ -20,7 +20,7 @@
 
         $locationProvider.html5Mode(true);
 
-        $stateProvider.state('services', {
+        $stateProvider.state('/services', {
             url: '/services',
             templateUrl: 'service-list.html',
             controller: 'ServiceListCtrl'

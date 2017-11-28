@@ -5,15 +5,15 @@ const env = {
   NODE_ENV: 'development',
   WATCHMEN_BASE_URL: 'http://localhost/' + pkg.name  + '/',
   WATCHMEN_WEB_NO_AUTH: 'true',
-  WATCHMENT_AUTH_NODEMAILER_NO_AUTH: 'true'
+  WATCHMENT_AUTH_NODEMAILER_NO_AUTH: 'true',
+  WATCHMEN_AUTH_NODEMAILER_USER: 'root@cap-net.cz',
+  WATCHMEN_AUTH_NODEMAILER_SENDMAIL: 'true'
 }
 
 const env_production = {
   NODE_ENV: 'production',
   WATCHMEN_BASE_URL: 'https://app.opennet.cz/' + pkg.name  + '/',
-  WATCHMEN_WEB_PORT: '3100',
-  WATCHMEN_AUTH_NODEMAILER_USER: 'root@cap-net.cz',
-  WATCHMEN_AUTH_NODEMAILER_SENDMAIL: 'true'
+  WATCHMEN_WEB_PORT: '3100'
 }
 
 module.exports = {
@@ -33,7 +33,8 @@ module.exports = {
       ref: 'origin/master',
       repo: pkg.repository.url,
       path: '/usr/local/app/' + pkg.name,
-      env: env_production
+      env: env_production,
+      'post-deploy': 'npm update; bower update; gulp build; NODE_ENV=production pm2 startOrRestart ecosystem.js;'
     }
   }
 };
