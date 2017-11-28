@@ -11,14 +11,15 @@ module.exports = {
     env: {
       NODE_ENV: 'development',
       WATCHMEN_WEB_NO_AUTH: 'true',
-      WATCHMEN_AUTH_NODEMAILER_USER: 'root@cap-net.cz',
-      WATCHMEN_AUTH_NODEMAILER_SENDMAIL: 'true',
-      WATCHMEN_MAILER_TEMPLATE_DIRECTORY: path.join(__dirname, 'webserver/views/nodemailer')
+      WATCHMENT_AUTH_NODEMAILER_NO_AUTH: 'true'
     },
     env_production: {
       NODE_ENV: 'production',
       WATCHMEN_BASE_URL: 'https://app.opennet.cz/' + pkg.name  + '/',
-      WATCHMEN_WEB_PORT: 3100
+      WATCHMEN_WEB_PORT: 3100,
+      WATCHMEN_AUTH_NODEMAILER_USER: 'root@cap-net.cz',
+      WATCHMEN_AUTH_NODEMAILER_SENDMAIL: true,
+      WATCHMEN_MAILER_TEMPLATE_DIRECTORY: path.join(__dirname, 'webserver/views/nodemailer')
     }
   }],
   deploy: {
