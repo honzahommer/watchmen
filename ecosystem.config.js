@@ -20,11 +20,11 @@ module.exports = {
   apps : [{
     name: pkg.name + '-monitor-server',
     script: 'run-monitor-server.js',
-    env
+    env, env_production
   }, {
     name: pkg.name + '-web-server',
     script: 'run-web-server.js',
-    env
+    env, env_production
   }],
   deploy: {
     production: {
