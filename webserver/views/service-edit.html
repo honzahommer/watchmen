@@ -76,7 +76,7 @@
                 <div class="col-sm-6">
                     <select ng-options="service.name as service.name for service in pingServices"
                             id="service-pingService-name"
-                            ng-model="service.pingServiceName" class="form-control">
+                            ng-model="service.pingServiceName" class="form-control" placeholder="icmp">
                     </select>
                     <div ping-service-options ng-model="selectedPingServiceOptions"></div>
                 </div>

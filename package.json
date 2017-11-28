@@ -53,6 +53,7 @@
     "timestream-aggregates": "^0.1.7",
     "validator": "^3.39.0",
     "watchmen-ping-dns-resolve": "0.0.7",
+    "watchmen-ping-head-ssl": "^1.0.8",
     "watchmen-ping-http-contains": "^0.0.2",
     "watchmen-ping-http-head": "^0.2.0",
     "watchmen-ping-icmp": "^0.1.2",

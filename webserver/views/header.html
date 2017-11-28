@@ -16,15 +16,6 @@
                     <a ui-sref="newService" class="btn">Add New Service</a>
                 </li>
                 <% } %>
-            </ul>
-        </div>
-        <div class="navbar-collapse collapse" id="main-nav-bar">
-            <ul class="nav navbar-nav navbar-right">
-                <% if ((user && user.isAdmin) || no_auth) { %>
-                <li>
-                    <a ui-sref="newService" class="btn">Add New Service</a>
-                </li>
-                <% } %>
                 <% if (user) { %>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
@@ -35,7 +26,7 @@
                         <li><a target="_self" href="/logout">Logout <%=user.email%></a></li>
                     </ul>
                 </li>
-                <% } else { %>
+                <% } else if (!no_auth) { %>
                   <li>
                       <a target="_self" href="/auth/google">Sign In with Google</a>
                   </li>

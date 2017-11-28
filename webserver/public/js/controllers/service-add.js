@@ -22,13 +22,13 @@
 
       $scope.editServiceTitle = "New service";
       // defaults
-      $scope.service.timeout = 10000;
-      $scope.service.warningThreshold = 5000;
+      $scope.service.timeout = 1000;
+      $scope.service.warningThreshold = 10000;
       $scope.service.interval = 60000;
-      $scope.service.failureInterval = 30000;
-      $scope.service.failuresToBeOutage = 1;
-      $scope.service.port = 80;
-      $scope.service.pingServiceName = 'http-head';
+      $scope.service.failureInterval = 5000;
+      $scope.service.failuresToBeOutage = 2;
+      $scope.service.pingServiceName = 'icmp';
+      $scope.service.port = 0;
 
       $scope.save = function () {
 

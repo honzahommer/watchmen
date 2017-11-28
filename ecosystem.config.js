@@ -9,6 +9,7 @@ module.exports = {
     script: 'run-web-server.js',
     env: {
       NODE_ENV: 'development',
+      WATCHMEN_WEB_NO_AUTH: 'true'
     },
     env_production: {
       NODE_ENV: 'production',
