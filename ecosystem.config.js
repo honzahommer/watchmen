@@ -1,4 +1,5 @@
 const pkg = require('./package.json');
+const path = require('path');
 
 module.exports = {
   apps : [{
@@ -9,7 +10,10 @@ module.exports = {
     script: 'run-web-server.js',
     env: {
       NODE_ENV: 'development',
-      WATCHMEN_WEB_NO_AUTH: 'true'
+      WATCHMEN_WEB_NO_AUTH: 'true',
+      WATCHMEN_AUTH_NODEMAILER_USER: 'root@cap-net.cz',
+      WATCHMEN_AUTH_NODEMAILER_SENDMAIL: 'true',
+      WATCHMEN_MAILER_TEMPLATE_DIRECTORY: path.join(__dirname, 'webserver/views/nodemailer')
     },
     env_production: {
       NODE_ENV: 'production',
