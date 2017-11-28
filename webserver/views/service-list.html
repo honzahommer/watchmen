@@ -76,7 +76,7 @@
 
                 <td data-title="'Host'" sortable="'service.name'">
                     <span ng-if="row.service.isRestricted" class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-                    <a class="name" href="/services/{{row.service.id}}/view">
+                    <a class="name" href="services/{{row.service.id}}/view">
                         {{row.service.name}}
                     </a>
                 </td>
@@ -86,14 +86,14 @@
                 </td>
 
                 <td class="result-uptime"  data-title="'last 24h'" sortable="'status.last24Hours.uptime'">
-                    <a class="name" href="/services/{{row.service.id}}/view">
+                    <a class="name" href="services/{{row.service.id}}/view">
                         <span>{{row.status.last24Hours.uptime}}%</span>
                     </a>
                 </td>
 
                 <td class="result-uptime hidden-sm hidden-xs" header-class="'hidden-sm hidden-xs'"
                     data-title="'last week'" sortable="'status.lastWeek.uptime'">
-                    <a class="name" href="/services/{{row.service.id}}/view">
+                    <a class="name" href="services/{{row.service.id}}/view">
                         <span>{{row.status.lastWeek.uptime}}%</span>
                     </a>
                 </td>
