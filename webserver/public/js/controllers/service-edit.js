@@ -39,7 +39,7 @@
       }, function(err){
         console.error(err);
         if (err.status === 401) {
-          $state.go('services');
+          $state.go('/services');
         }
         loaded();
       });
@@ -51,7 +51,7 @@
 
         $scope.service.$save(function () {
           Report.clearCache();
-          $state.go('services');
+          $state.go('/services');
         }, function(response){
           console.error(response);
           if (response && response.data && response.data.errors) {
@@ -61,7 +61,7 @@
       };
 
       $scope.cancel = function () {
-        $state.go('services');
+        $state.go('/services');
       };
 
     });
